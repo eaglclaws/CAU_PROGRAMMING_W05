@@ -26,14 +26,9 @@ long rfibo(int n)
 
 long sfibo(int n)
 {
-	static int prev_fibo = 0;
-	static int fibo = 1;
-	int buffer;
-	buffer = fibo;
-	fibo = fibo + prev_fibo;
-	prev_fibo = buffer;
-	buffer = fibo;
-	fibo = fibo + prev_fibo;
-	prev_fibo = buffer;
-	return fibo;
+    static int prev_fibo = 1;
+    static int fibo = 1;
+    fibo = 3*fibo - prev_fibo;
+    prev_fibo = (fibo + prev_fibo)/3;
+    return fibo;
 }
